@@ -35,3 +35,7 @@ set shiftwidth=4
 
 " Add Pathogen
 call pathogen#infect()
+
+" Pathogen settings
+set laststatus=2
+set ttimeoutlen=50
