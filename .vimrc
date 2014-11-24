@@ -31,3 +31,7 @@ set shiftwidth=4
 
 " (no) always uses spaces instead of tab characters
 " expandtab
+
+
+" Add Pathogen
+call pathogen#infect()
