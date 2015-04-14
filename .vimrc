@@ -34,8 +34,9 @@ set shiftwidth=4
 
 
 " Add Pathogen
-call pathogen#infect()
+execute pathogen#infect()
+filetype plugin indent on
 
 " Pathogen settings
-set laststatus=2
-set ttimeoutlen=50
+" set laststatus=2
+"set ttimeoutlen=50
