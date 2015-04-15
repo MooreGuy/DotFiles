@@ -37,6 +37,26 @@ set shiftwidth=4
 execute pathogen#infect()
 filetype plugin indent on
 
+
+" SOLARIZED
+"====================================================
+
+" solarized color
+syntax enable
+set background=dark
+
+"solarized options are optional but somtimes ruin things.
+"let g:solarized_contrast = "high"
+"let g:solarized_termcolors = 256
+"let g:solarized_visibility = "high"
+"let g:solarized_termtrans = 0
+
+"Set solarized.
+colorscheme solarized
+
+
+
+
 " Pathogen settings
 " set laststatus=2
 "set ttimeoutlen=50
