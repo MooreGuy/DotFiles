@@ -49,7 +49,10 @@ set background=dark
 "let g:solarized_contrast = "high"
 "let g:solarized_termcolors = 256
 "let g:solarized_visibility = "high"
-"let g:solarized_termtrans = 0
+"
+"Colors for vim windows inside tmux need transparency settings, but windows
+"inside just iterm2 don't.
+let g:solarized_termtrans = 0
 
 "Set solarized.
 colorscheme solarized
