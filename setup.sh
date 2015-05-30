@@ -9,7 +9,6 @@ vimAutoloadPath="$HOME/.vim/autoload"
 pathogenPath="$HOME/.vim/autoload/pathogen.vim"
 tmuxConfigPath="$HOME/tmux.conf"
 tmuxCurrentPath="./tmux.conf"
-vimColors="./vim-colors-solarized"
 
 if [ -a $vimRcPath ];
   then
@@ -34,15 +33,14 @@ then
 	mkdir -v -p $vimAutoloadPath
 fi
 
+# Install plugins
 cd  ~/.vim/bundle
 
-if [ ! -d $vimColors ];
-then
-	git clone https://github.com/altercation/vim-colors-solarized
-else
-	echo "vim-colors-solarized already exists."
-fi
+git clone https://github.com/altercation/vim-colors-solarized
+git clone https://github.com/fatih/vim-go
+git clone https://github.com/scrooloose/syntastic
 
+# Install pathogen
 if [ ! -a $pathogenPath ]
 then
 	echo "Getting pathogen script."
