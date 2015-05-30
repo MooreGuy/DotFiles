@@ -52,11 +52,10 @@ set background=dark
 "
 "Colors for vim windows inside tmux need transparency settings, but windows
 "inside just iterm2 don't.
-let g:solarized_termtrans = 0
+let g:solarized_termtrans = 1
 
 "Set solarized.
 colorscheme solarized
-
 
 
 
