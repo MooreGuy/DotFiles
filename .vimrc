@@ -19,28 +19,35 @@ set tabstop=4
 " combination of spaces anad tabs are used"
 " to simulate tab stops at a width other"
 " than the (hard)TABSTOP"
-set softtabstop=0 
-  
+set softtabstop=0
+
 " size of an indent"
 set shiftwidth=4
 
-" make tab insert indents instead 
+" make tab insert indents instead
 " beginning of a line
-"set smarttab        
+" set smarttab
 
 " (no) always uses spaces instead of tab characters
 " expandtab
 
+
+" Pathogen
+" ====================================================
 " Add Pathogen
 execute pathogen#infect()
 filetype plugin indent on
+
+" Pathogen settings
+" set laststatus=2
+" set ttimeoutlen=50
 
 " Colors
 " ====================================================
 " Force 256 colors because solarized uses 256 colors.
 set t_Co=256
 
-" SOLARIZED
+" Solarized
 " ====================================================
 
 " solarized color
@@ -59,7 +66,7 @@ let g:solarized_termtrans = 1
 "Set solarized.
 colorscheme solarized
 
-" AIRLINE
+" Airline
 " ====================================================
 " This enables airline.
 let g:airline#extensions#tabline#enabled = 1
@@ -67,6 +74,6 @@ let g:airline#extensions#tabline#enabled = 1
 " Enable on single buffer.
 set laststatus=2
 
-" Pathogen settings
-" set laststatus=2
-"set ttimeoutlen=50
+" Angular.js
+" ====================================================
+

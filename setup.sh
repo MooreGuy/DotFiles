@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# Paths for installation
 scriptPath=$(pwd)
 
 oldPathExtension=".old"
@@ -16,6 +17,9 @@ tmuxCurrentPath="./.tmux.conf"
 
 bashRCPath="$HOME/.bashrc"
 curBashRCPath="./.bashrc"
+
+# Setup Vim
+# =========================================================
 
 if [ -e $vimRCPath ]
 then
@@ -42,12 +46,14 @@ fi
 # Install plugins
 cd  ~/.vim/bundle
 
+# Clone all vim plugins
 git clone https://github.com/altercation/vim-colors-solarized
 git clone https://github.com/fatih/vim-go
 git clone https://github.com/scrooloose/syntastic
 git clone https://github.com/bling/vim-airline
+git clone https://github.com/burnettk/vim-angular
 
-# Install pathogen
+# Install pathogen script
 if [ ! -e $pathogenPath ]
 then
 	echo "Getting pathogen script."
@@ -65,6 +71,9 @@ else
   echo "BashRC doesn't already exist"
   cp -v "$curBashRCPath" "$bashRCPath"
 fi
+
+# Setup Tmux
+# =========================================================
 
 # Load tmux configuration
 if [ -e $tmuxConfigPath ]
