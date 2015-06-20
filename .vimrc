@@ -39,7 +39,7 @@ filetype plugin indent on
 
 
 " SOLARIZED
-"====================================================
+" ====================================================
 
 " solarized color
 syntax enable
@@ -57,7 +57,13 @@ let g:solarized_termtrans = 1
 "Set solarized.
 colorscheme solarized
 
+" AIRLINE
+" ====================================================
+" This enables airline.
+let g:airline#extensions#tabline#enabled = 1
 
+" Enable on single buffer.
+set laststatus=2
 
 " Pathogen settings
 " set laststatus=2

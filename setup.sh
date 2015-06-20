@@ -45,6 +45,7 @@ cd  ~/.vim/bundle
 git clone https://github.com/altercation/vim-colors-solarized
 git clone https://github.com/fatih/vim-go
 git clone https://github.com/scrooloose/syntastic
+git clone https://github.com/bling/vim-airline
 
 # Install pathogen
 if [ ! -e $pathogenPath ]
