@@ -12,7 +12,6 @@ set noswapfile
 set nobackup
 set nowb
 
-
 "TAB THINGS
 " size of a hard tab"
 set tabstop=4
@@ -32,11 +31,14 @@ set shiftwidth=4
 " (no) always uses spaces instead of tab characters
 " expandtab
 
-
 " Add Pathogen
 execute pathogen#infect()
 filetype plugin indent on
 
+" Colors
+" ====================================================
+" Force 256 colors because solarized uses 256 colors.
+set t_Co=256
 
 " SOLARIZED
 " ====================================================
