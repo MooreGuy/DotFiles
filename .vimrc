@@ -44,15 +44,13 @@ filetype plugin indent on
 
 " Colors
 " ====================================================
-" Force 256 colors because solarized uses 256 colors.
+" Force 256 colors
 set t_Co=256
 
 " Solarized
 " ====================================================
 
 " solarized color
-syntax enable
-set background=dark
 
 "solarized options are optional but somtimes ruin things.
 "let g:solarized_contrast = "high"
@@ -61,11 +59,19 @@ set background=dark
 "
 "Colors for vim windows inside tmux need transparency settings, but windows
 "inside just iterm2 don't.
-let g:solarized_termtrans = 1
+"let g:solarized_termtrans = 1
 
 "Set solarized.
-colorscheme solarized
+"colorscheme solarized
 
+" Base 16 Colors
+" ====================================================
+" Access colors present in 256 colorspace
+let base16colorspace=256
+
+colorscheme base16-eighties
+
+set background=dark
 " Airline
 " ====================================================
 " This enables airline.
