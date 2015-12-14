@@ -7,11 +7,6 @@ set visualbell          " No sounds
 " Turn on syntax highlighting
 syntax on
 
-" Turn off swap files
-set noswapfile
-set nobackup
-set nowb
-
 "TAB THINGS
 " size of a hard tab"
 set tabstop=4
@@ -23,6 +18,8 @@ set softtabstop=0
 
 " size of an indent"
 set shiftwidth=4
+
+set colorcolumn=80
 
 " make tab insert indents instead
 " beginning of a line
@@ -44,13 +41,14 @@ filetype plugin indent on
 
 " Colors
 " ====================================================
-" Force 256 colors
-set t_Co=256
+" Force 256 colors because solarized uses 256 colors.
+" set t_Co=256
 
 " Solarized
 " ====================================================
 
 " solarized color
+set background=dark
 
 "solarized options are optional but somtimes ruin things.
 "let g:solarized_contrast = "high"
@@ -59,19 +57,23 @@ set t_Co=256
 "
 "Colors for vim windows inside tmux need transparency settings, but windows
 "inside just iterm2 don't.
-"let g:solarized_termtrans = 1
+" let g:solarized_termtrans = 1
 
 "Set solarized.
-"colorscheme solarized
+colorscheme solarized
+
+
 
 " Base 16 Colors
 " ====================================================
+"let base16colorspace=256
+
+"colorscheme base16-eighties
+
 " Access colors present in 256 colorspace
-let base16colorspace=256
 
-colorscheme base16-eighties
+"set background=dark
 
-set background=dark
 " Airline
 " ====================================================
 " This enables airline.
@@ -79,7 +81,3 @@ let g:airline#extensions#tabline#enabled = 1
 
 " Enable on single buffer.
 set laststatus=2
-
-" Angular.js
-" ====================================================
-
