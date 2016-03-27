@@ -7,7 +7,7 @@ scriptPath=$(pwd)
 oldPathExtension=".old"
 
 vimDir="$HOME/.vim"
-curVimRCPath="./.vimrc"
+curVimRCPath="./vim/vimrc"
 vimRCPath="$HOME/.vimrc"
 vimBundlePath="$HOME/.vim/bundle"
 vimAutoloadPath="$HOME/.vim/autoload"
@@ -17,10 +17,10 @@ curVimFiletypePath="./vim/filetype.vim"
 pathogenPath="$HOME/.vim/autoload/pathogen.vim"
 
 tmuxConfigPath="$HOME/.tmux.conf"
-tmuxCurrentPath="./.tmux.conf"
+tmuxCurrentPath="./tmux.conf"
 
 bashRCPath="$HOME/.bashrc"
-curBashRCPath="./.bashrc"
+curBashRCPath="./bash/bashrc"
 
 # Setup Vim
 # =========================================================

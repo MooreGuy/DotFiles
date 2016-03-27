@@ -62,8 +62,6 @@ set background=dark
 "Set solarized.
 colorscheme solarized
 
-
-
 " Base 16 Colors
 " ====================================================
 "let base16colorspace=256
@@ -81,3 +79,8 @@ let g:airline#extensions#tabline#enabled = 1
 
 " Enable on single buffer.
 set laststatus=2
+
+
+" LilyPond
+" ====================================================
+set runtimepath+=/usr/local/share/lilypond/${LILYPOND_VERSION}/vim/
