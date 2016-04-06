@@ -11,14 +11,11 @@ syntax on
 " size of a hard tab"
 set tabstop=4
 
-" combination of spaces anad tabs are used"
-" to simulate tab stops at a width other"
-" than the (hard)TABSTOP"
 set softtabstop=0
 
-" size of an indent"
 set shiftwidth=4
 
+" Nice to show where 80 is so common length can be used.
 set colorcolumn=80
 
 " make tab insert indents instead
@@ -42,7 +39,7 @@ filetype plugin indent on
 " Colors
 " ====================================================
 " Force 256 colors because solarized uses 256 colors.
-" set t_Co=256
+set t_Co=256
 
 " Solarized
 " ====================================================
