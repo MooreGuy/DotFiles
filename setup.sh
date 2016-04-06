@@ -69,6 +69,7 @@ git clone https://github.com/scrooloose/syntastic
 git clone https://github.com/bling/vim-airline
 git clone https://github.com/burnettk/vim-angular
 git clone https://github.com/chriskempson/base16-vim.git
+git clone https://github.com/leafgarland/typescript-vim.git
 
 # Install pathogen script
 # =========================================================
