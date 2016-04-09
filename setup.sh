@@ -7,8 +7,8 @@ scriptPath=$(pwd)
 oldPathExtension=".old"
 
 vimDir="$HOME/.vim"
-curVimRCPath="./vim/vimrc"
-vimRCPath="$HOME/.vimrc"
+curVimrcPath="./vim/vimrc"
+vimrcPath="$HOME/.vimrc"
 vimBundlePath="$HOME/.vim/bundle"
 vimAutoloadPath="$HOME/.vim/autoload"
 vimFiletypePath="$HOME/.vim/filetype.vim"
@@ -19,8 +19,10 @@ pathogenPath="$HOME/.vim/autoload/pathogen.vim"
 tmuxConfigPath="$HOME/.tmux.conf"
 tmuxCurrentPath="./tmux.conf"
 
-bashRCPath="$HOME/.bashrc"
-curBashRCPath="./bash/bashrc"
+bashrcPath="$HOME/.bashrc"
+curBashrcPath="./bash/bashrc"
+zshrcPath="$HOME/.bashrc"
+curZshrcPath="./zsh/zshrc"
 
 # Setup Vim
 # =========================================================
@@ -29,13 +31,13 @@ then
 	mkdir -v -p $vimDir
 fi
 
-if [ -e $vimRCPath ]
+if [ -e $vimrcPath ]
 then
 	echo "Vimrc already exists."
-	cp -v "$vimRCPath" "$vimRCPath$oldPathExtension"
-	cp -v "$curVimRCPath" "$vimRCPath"
+	cp -v "$vimrcPath" "$vimrcPath$oldPathExtension"
+	cp -v "$curVimrcPath" "$vimrcPath"
 else
-	cp -v "$curVimRCPath" "$vimRCPath"
+	cp -v "$curVimrcPath" "$vimrcPath"
 fi
 
 if [ ! -d $vimBundlePath ]
@@ -82,13 +84,25 @@ fi
 # Load bashrc
 # =========================================================
 cd $scriptPath
-if [ -e $bashRCPath ]
+if [ -e $bashrcPath ]
 then
-    echo "BashRC already exists."
-    cp -v "$bashRCPath" "$bashRCPath$oldPathExtension"
-    cp -v "$curBashRCPath" "$bashRCPath"
+    echo "Bashrc already exists."
+    cp -v "$bashrcPath" "$bashrcPath$oldPathExtension"
+    cp -v "$curBashrcPath" "$bashrcPath"
 else
-  cp -v "$curBashRCPath" "$bashRCPath"
+  cp -v "$curBashrcPath" "$bashrcPath"
+fi
+
+# Load zshrc
+# =========================================================
+cd $scriptPath
+if [ -e $zshrcPath ]
+then
+    echo "zshrc already exists."
+    cp -v "$zshrcPath" "$zshrcPath$oldPathExtension"
+    cp -v "$curZshrcPath" "$zshrcPath"
+else
+  cp -v "$curZshrcPath" "$zshrcPath"
 fi
 
 # Setup Tmux
