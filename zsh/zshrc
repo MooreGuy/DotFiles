@@ -1,0 +1,18 @@
+# .zshrc
+# User specific variables
+export GOPATH=$HOME/Git/gocode
+export EDITOR=vim
+
+# Attach to tmux if session exists or create a new session.
+if [ -z $TMUX ]; then
+	tmux attach
+else
+	tmux
+fi
+
+mkdir -p $HOME/Git/gocode/bin
+mkdir $HOME/Git/gocode/pkg
+mkdir $HOME/Git/gocode/src
+
+# User specific aliases and functions
+alias yolo='git commit -A -m "YOLO"'
