@@ -1,6 +1,6 @@
 # .bashrc
 # User specific variables
-export GOPATH=$HOME/gocode
+export GOPATH=$HOME/Code/gocode
 export EDITOR=vim
 
 # Attach to tmux if session exists or create a new session.
