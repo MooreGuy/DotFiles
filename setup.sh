@@ -59,22 +59,25 @@ else
 	cp -v "$curVimFiletypePath" "$vimFiletypePath"
 fi
 
-# Install plugins
+# PLUGINS
 # =========================================================
 cd  ~/.vim/bundle
 
 # Clone all vim plugins
-# =========================================================
 git clone https://github.com/altercation/vim-colors-solarized
-git clone https://github.com/fatih/vim-go
 git clone https://github.com/scrooloose/syntastic
-git clone https://github.com/bling/vim-airline
-git clone https://github.com/burnettk/vim-angular
 git clone https://github.com/chriskempson/base16-vim.git
+
+# Statusline - Airline
+git clone git@github.com:vim-airline/vim-airline.git
+git clone git@github.com:vim-airline/vim-airline-themes.git
+
+# Language specific plugins
+git clone https://github.com/fatih/vim-go
+git clone https://github.com/burnettk/vim-angular
 git clone https://github.com/leafgarland/typescript-vim.git
 
 # Install pathogen script
-# =========================================================
 if [ ! -e $pathogenPath ]
 then
 	echo "Getting pathogen script."
