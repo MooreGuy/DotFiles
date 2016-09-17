@@ -15,5 +15,4 @@ if [ -d $HOME/gocode ]; then
 fi
 
 
-# User specific aliases and functions
-alias yolo='git commit -A -m "YOLO"'
+alias clip="xclip -selection c"
