@@ -21,7 +21,7 @@ tmuxCurrentPath="./tmux.conf"
 
 bashrcPath="$HOME/.bashrc"
 curBashrcPath="./bash/bashrc"
-zshrcPath="$HOME/.bashrc"
+zshrcPath="$HOME/.zshrc"
 curZshrcPath="./zsh/zshrc"
 
 # Setup Vim
