@@ -76,6 +76,7 @@ git clone git@github.com:vim-airline/vim-airline-themes.git
 git clone https://github.com/fatih/vim-go
 git clone https://github.com/burnettk/vim-angular
 git clone https://github.com/leafgarland/typescript-vim.git
+git clone https://github.com/rust-lang/rust.vim
 
 # Install pathogen script
 if [ ! -e $pathogenPath ]
