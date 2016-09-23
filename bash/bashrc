@@ -3,6 +3,7 @@
 export GOPATH=$HOME/Code/gocode
 export EDITOR=vim
 
+export PS1="${BLU}\u${WHI}@${PUR}\H ${GRE}\t ${PUR}\W${NUL} > "
 # Attach to tmux if session exists or create a new session.
 if [ -z $TMUX ]; then
 	tmux attach
