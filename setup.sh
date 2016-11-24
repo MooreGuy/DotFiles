@@ -68,6 +68,9 @@ git clone https://github.com/altercation/vim-colors-solarized
 git clone https://github.com/scrooloose/syntastic
 git clone https://github.com/chriskempson/base16-vim.git
 
+# git plugins
+git clone https://github.com/airblade/vim-gitgutter
+
 # Statusline - Airline
 git clone git@github.com:vim-airline/vim-airline.git
 git clone git@github.com:vim-airline/vim-airline-themes.git
@@ -77,6 +80,9 @@ git clone https://github.com/fatih/vim-go
 git clone https://github.com/burnettk/vim-angular
 git clone https://github.com/leafgarland/typescript-vim.git
 git clone https://github.com/rust-lang/rust.vim
+
+# LaTeX
+git clone git@github.com:xuhdev/vim-latex-live-preview.git
 
 # Install pathogen script
 if [ ! -e $pathogenPath ]
