@@ -84,6 +84,9 @@ git clone https://github.com/rust-lang/rust.vim
 # LaTeX
 git clone git@github.com:xuhdev/vim-latex-live-preview.git
 
+# Debugging
+git clone https://github.com/joonty/vdebug.git
+
 # Install pathogen script
 if [ ! -e $pathogenPath ]
 then
