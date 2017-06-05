@@ -7,7 +7,7 @@ export PS1="${BLU}\u${WHI}@${PUR}\H ${GRE}\t ${PUR}\W${NUL} > "
 export SHELL="/bin/bash"
 
 # Attach to tmux if session exists or create a new session.
-if [ -z $TMUX ]; then
+if [ -z $TMUX && -t 0 ]; then
 	tmux attach
 else
 	tmux
