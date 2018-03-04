@@ -67,6 +67,7 @@ cd  ~/.vim/bundle
 git clone https://github.com/altercation/vim-colors-solarized
 git clone https://github.com/scrooloose/syntastic
 git clone https://github.com/chriskempson/base16-vim.git
+git clone https://github.com/tpope/vim-sleuth
 
 # git plugins
 git clone https://github.com/airblade/vim-gitgutter
