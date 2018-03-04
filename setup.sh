@@ -131,3 +131,5 @@ then
 else
 	cp -v "$tmuxCurrentPath" "$tmuxConfigPath"
 fi
+
+source "$bashrcPath"
