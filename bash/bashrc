@@ -1,5 +1,8 @@
 # .bashrc
 # User specific variables
+
+set -o vi
+
 export GOPATH=$HOME/Code/gocode
 export EDITOR=vim
 
