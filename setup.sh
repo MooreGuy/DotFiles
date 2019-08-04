@@ -68,6 +68,10 @@ git clone https://github.com/altercation/vim-colors-solarized
 git clone https://github.com/scrooloose/syntastic
 git clone https://github.com/chriskempson/base16-vim.git
 git clone https://github.com/tpope/vim-sleuth
+git clone https://github.com/scrooloose/nerdtree.git
+git clone https://vimawesome.com/plugin/surround-vim
+git clone https://github.com/scrooloose/nerdcommenter
+git clone git@github.com:Yggdroot/indentLine.git
 
 # git plugins
 git clone https://github.com/airblade/vim-gitgutter
