@@ -7,57 +7,48 @@ scriptPath=$(pwd)
 oldPathExtension=".old"
 
 vimDir="$HOME/.vim"
-curVimrcPath="./vim/vimrc"
+curVimrcPath="$scriptPath/vim/vimrc"
 vimrcPath="$HOME/.vimrc"
 vimBundlePath="$HOME/.vim/bundle"
 vimAutoloadPath="$HOME/.vim/autoload"
 vimFiletypePath="$HOME/.vim/filetype.vim"
-curVimFiletypePath="./vim/filetype.vim"
+curVimFiletypePath="$scriptPath/vim/filetype.vim"
 
 pathogenPath="$HOME/.vim/autoload/pathogen.vim"
 
 tmuxConfigPath="$HOME/.tmux.conf"
-tmuxCurrentPath="./tmux.conf"
+tmuxCurrentPath="$scriptPath/tmux.conf"
 
 bashrcPath="$HOME/.bashrc"
-curBashrcPath="./bash/bashrc"
+curBashrcPath="$scriptPath/bash/bashrc"
 zshrcPath="$HOME/.zshrc"
-curZshrcPath="./zsh/zshrc"
+curZshrcPath="$scriptPath/zsh/zshrc"
 
 # Setup Vim
 # =========================================================
-if [ ! -d $vimDir ]
-then
-	mkdir -v -p $vimDir
+if [[ ! -d $vimDir ]]; then
+  mkdir -v -p $vimDir
 fi
 
-if [ -e $vimrcPath ]
-then
-	echo "Vimrc already exists."
-	cp -v "$vimrcPath" "$vimrcPath$oldPathExtension"
-	cp -v "$curVimrcPath" "$vimrcPath"
-else
-	cp -v "$curVimrcPath" "$vimrcPath"
+if [[ -e $vimrcPath || -h $vimrcPath ]]; then
+  echo "Vimrc already exists."
+  rm -f "$vimrcPath" "$vimrcPath$oldPathExtension"
+fi
+ln -s "$curVimrcPath" "$vimrcPath"
+
+if [[ ! -d $vimBundlePath ]]; then
+  mkdir -v -p $vimBundlePath
 fi
 
-if [ ! -d $vimBundlePath ]
-then
-	mkdir -v -p $vimBundlePath
+if [[ ! -d $vimAutoloadPath ]]; then
+  mkdir -v -p $vimAutoloadPath
 fi
 
-if [ ! -d $vimAutoloadPath ]
-then
-	mkdir -v -p $vimAutoloadPath
+if [[ -e $vimFiletypePath || -h $vimFiletypePath ]]; then
+  echo "Vim filetype file already exists"
+  rm -f "$vimFiletypePath" "$vimFiletypePath$oldPathExtension"
 fi
-
-if [ -e $vimFiletypePath ]
-then
-	echo "Vim filetype file already exists"
-	cp -v "$vimFiletypePath" "$vimFiletypePath$oldPathExtension"
-	cp -v "$curVimFiletypePath" "$vimFiletypePath"
-else
-	cp -v "$curVimFiletypePath" "$vimFiletypePath"
-fi
+ln -s "$curVimFiletypePath" "$vimFiletypePath"
 
 # PLUGINS
 # =========================================================
@@ -69,12 +60,12 @@ git clone https://github.com/scrooloose/syntastic
 git clone https://github.com/chriskempson/base16-vim.git
 git clone https://github.com/tpope/vim-sleuth
 git clone https://github.com/scrooloose/nerdtree.git
-git clone https://vimawesome.com/plugin/surround-vim
-git clone https://github.com/scrooloose/nerdcommenter
+git clone https://github.com/tpope/vim-surround.git
+git clone https://github.com/scrooloose/nerdcommenter.git
 git clone git@github.com:Yggdroot/indentLine.git
 
 # git plugins
-git clone https://github.com/airblade/vim-gitgutter
+git clone https://github.com/airblade/vim-gitgutter.git
 
 # Statusline - Airline
 git clone git@github.com:vim-airline/vim-airline.git
@@ -93,47 +84,37 @@ git clone git@github.com:xuhdev/vim-latex-live-preview.git
 git clone https://github.com/joonty/vdebug.git
 
 # Install pathogen script
-if [ ! -e $pathogenPath ]
-then
-	echo "Getting pathogen script."
-	curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+if [[ ! -e $pathogenPath || -h $pathogenPath ]]; then
+  echo "Getting pathogen script."
+  curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 fi
 
 # Load bashrc
 # =========================================================
 cd $scriptPath
-if [ -e $bashrcPath ]
-then
-    echo "Bashrc already exists."
-    cp -v "$bashrcPath" "$bashrcPath$oldPathExtension"
-    cp -v "$curBashrcPath" "$bashrcPath"
-else
-  cp -v "$curBashrcPath" "$bashrcPath"
+if [[ -e $bashrcPath || -h $bashrcPath ]]; then
+  echo "Bashrc already exists."
+  rm -f "$bashrcPath" "$bashrcPath$oldPathExtension"
 fi
+ln -s "$curBashrcPath" "$bashrcPath"
 
 # Load zshrc
 # =========================================================
 cd $scriptPath
-if [ -e $zshrcPath ]
-then
-    echo "zshrc already exists."
-    cp -v "$zshrcPath" "$zshrcPath$oldPathExtension"
-    cp -v "$curZshrcPath" "$zshrcPath"
-else
-  cp -v "$curZshrcPath" "$zshrcPath"
+if [[ -e $zshrcPath || -h $zshrcPath ]]; then
+  echo "zshrc already exists."
+  rm -f "$zshrcPath" "$zshrcPath$oldPathExtension"
 fi
+ln -s "$curZshrcPath" "$zshrcPath"
 
 # Setup Tmux
 # =========================================================
 
 # Load tmux configuration
-if [ -e $tmuxConfigPath ]
-then
-	echo "Tmux config already exists."
-	cp -v "$tmuxConfigPath" "$tmuxConfigPath$oldPathExtension"
-	cp -v "$tmuxCurrentPath" "$tmuxConfigPath"
-else
-	cp -v "$tmuxCurrentPath" "$tmuxConfigPath"
+if [[ -e $tmuxConfigPath || -h $tmuxConfigPath ]]; then
+  echo "Tmux config already exists."
+  rm -f "$tmuxConfigPath" "$tmuxConfigPath$oldPathExtension"
 fi
+ln -s "$tmuxCurrentPath" "$tmuxConfigPath"
 
 source "$bashrcPath"
