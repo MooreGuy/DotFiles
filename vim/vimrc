@@ -131,3 +131,16 @@ endfunc
 nnoremap <C-t>h :call MoveToNextTab()<CR>
 nnoremap <C-t>l :call MoveToPrevTab()<CR>
 "=========================================
+
+" NERDTree
+"=========================================
+"
+" automatically open NERDTree when no files are specified in vim
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" automatically open NERDTree when a directory is specified
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+
+map <C-n> :NERDTreeToggle<CR>
