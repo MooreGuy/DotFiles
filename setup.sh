@@ -83,6 +83,9 @@ git clone git@github.com:xuhdev/vim-latex-live-preview.git
 # Debugging
 git clone https://github.com/joonty/vdebug.git
 
+# TMUX
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 # Install pathogen script
 if [[ ! -e $pathogenPath || -h $pathogenPath ]]; then
   echo "Getting pathogen script."
